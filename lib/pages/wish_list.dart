@@ -1,6 +1,6 @@
 import 'package:adopt_a_friend/constants/custom_variables.dart';
 import 'package:adopt_a_friend/logic/database_logic.dart';
-import 'package:adopt_a_friend/pages/friends_page.dart';
+import 'package:adopt_a_friend/pages/view_friend.dart';
 import 'package:flutter/material.dart';
 
 class WishList extends StatefulWidget {

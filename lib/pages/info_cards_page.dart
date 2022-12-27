@@ -15,7 +15,7 @@ class _InfoCardsPageState extends State<InfoCardsPage> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Info Cards' , style: TextStyle(color: textColor),),
@@ -25,8 +25,8 @@ class _InfoCardsPageState extends State<InfoCardsPage> {
       backgroundColor: backgroundColor,
       body: FutureBuilder(builder: (context , snapshot) {
         if (snapshot.hasData) {
-          Set<List<InfoCard>> set = snapshot.data;
-          List<InfoCard> cards = set.first;
+          Set<InfoCard> set = snapshot.data;
+          List<InfoCard> cards = set.toList();
 
           if (cards.isEmpty) {
             return const Center(child: Text('They are currently no info cards'),);
@@ -42,16 +42,27 @@ class _InfoCardsPageState extends State<InfoCardsPage> {
                       shadowColor: shadowColor,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(height/80)),
                       color: cardBackgroundColor,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // Image
-                          Image.network(cards[index].image),
-                          // Species
-                          Text('Species: ${cards[index].species}' , style: const TextStyle(color: textColor),),
-                          // breed
-                          Text('Breed: ${cards[index].breed}' , style: const TextStyle(color: textColor),),
-                        ],
+                      child: Padding(
+                        padding:  EdgeInsets.all(height/80),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // Image
+                            SizedBox(width: width/1.5,child: Image.network(cards[index].image)),
+                            // Species
+                            Row(
+                              children: [
+                                Text('Species: ${cards[index].species}' , style: const TextStyle(color: textColor),),
+                              ],
+                            ),
+                            // breed
+                            Row(
+                              children: [
+                                Text('Breed: ${cards[index].breed}' , style: const TextStyle(color: textColor),),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );

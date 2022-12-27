@@ -24,22 +24,46 @@ class _ViewInfoCardState extends State<ViewInfoCard> {
       ),
       backgroundColor: backgroundColor,
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Image
-            Image.network(widget.infoCard.image,),
-            // species
-            Text('Species: ${widget.infoCard.species}', style: const TextStyle(color: textColor),),
-            // breed
-            Text('Breed: ${widget.infoCard.breed}', style: const TextStyle(color: textColor),),
-            // health
-            Text('Health: ${widget.infoCard.health}', style: const TextStyle(color: textColor),),
-            // activity
-            Text('Activity: ${widget.infoCard.activity}', style: const TextStyle(color: textColor),),
-            // instructions
-            Text('Good to know: ${widget.infoCard.activity}', style: const TextStyle(color: textColor),),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(height/90),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Image
+              Image.network(widget.infoCard.image,),
+              // species
+              Row(
+                children: [
+                  Text('Species: ${widget.infoCard.species}', style: const TextStyle(color: textColor),),
+                ],
+              ),
+              // breed
+              Row(
+                children: [
+                  Text('Breed: ${widget.infoCard.breed}', style: const TextStyle(color: textColor),),
+                ],
+              ),
+              // health
+              Row(
+                children: [
+                  Expanded(child: Text('Health: ${widget.infoCard.health}', style: const TextStyle(color: textColor),)),
+                ],
+              ),
+              // activity
+              Row(
+                children: [
+                  Expanded(child:Text('Activity: ${widget.infoCard.activity}', style: const TextStyle(color: textColor),),
+                  )
+                ],
+              ),
+              // instructions
+              Row(
+                children: [
+                  Expanded(child: Text('Good to know: ${widget.infoCard.activity}', style: const TextStyle(color: textColor),)),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -25,8 +25,8 @@ class _SheltersPageState extends State<SheltersPage> {
       backgroundColor: backgroundColor,
       body: FutureBuilder(builder: (context, snapshot){
         if (snapshot.hasData) {
-          Set<List<Shelter>> set = snapshot.data;
-          List<Shelter> shelters = set.first;
+          Set<Shelter> set = snapshot.data;
+          List<Shelter> shelters = set.toList();
 
           if (shelters.isEmpty) {
             return const Center(child: Text('There are no shelters currently.'),);
@@ -48,12 +48,17 @@ class _SheltersPageState extends State<SheltersPage> {
                         children: [
                           // Image of shelter
                           Image.network(shelters[index].image),
-                          // name of shelter
-                          Text(shelters[index].name, style: const TextStyle(color: textColor),),
-                          // location
-                          Text('Located at: ${shelters[index].address}' , maxLines: 3, style: const TextStyle(color: textColor),),
-                          // short description
-                          Text( shelters[index].description , maxLines: 4, overflow: TextOverflow.ellipsis,style: const TextStyle(color: textColor),)
+                         Padding(padding: EdgeInsets.all(height/80) , child: Column(
+                           mainAxisAlignment: MainAxisAlignment.center,
+                           children: [
+                             // name of shelter
+                             Text(shelters[index].name, style: const TextStyle(color: textColor),),
+                             // location
+                             Text('Located at: ${shelters[index].address}' , maxLines: 3, style: const TextStyle(color: textColor),),
+                             // short description
+                             Text( shelters[index].description , maxLines: 4, overflow: TextOverflow.ellipsis,style: const TextStyle(color: textColor),)
+                           ],
+                         ),)
 
                         ],
                       ),

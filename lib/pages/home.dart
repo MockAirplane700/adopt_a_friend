@@ -2,7 +2,7 @@ import 'package:adopt_a_friend/constants/custom_variables.dart';
 import 'package:adopt_a_friend/logic/database_logic.dart';
 import 'package:adopt_a_friend/objects/friend.dart';
 import 'package:adopt_a_friend/objects/wish.dart';
-import 'package:adopt_a_friend/pages/friends_page.dart';
+import 'package:adopt_a_friend/pages/view_friend.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -30,42 +30,61 @@ class _HomeState extends State<Home> {
           children: [
             FutureBuilder(builder: (context , snapshot){
               if (snapshot.hasData) {
-                Set<List<Friend>> set = snapshot.data;
-                List<Friend> friends = set.first;
+
+                Set<Friend> set = snapshot.data;
+                List<Friend> friends = set.toList();
 
                 if (friends.isEmpty) {
                   return const Center(child: Text('No friends currently'),);
                 }else{
-                  return GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                    itemBuilder: (context , index) {
-                      return GestureDetector(
-                        onTap: () {
-                          // go to view friend
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewFriend(friend: friends[index])));
-                        },
-                        child: Card(
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(height/50)),
-                          shadowColor: shadowColor,
-                          color: cardBackgroundColor,
-                          elevation: 8,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              // Image
-                              Image.network(friends[index].images[0]),
-                              // name
-                              Text(friends[index].name ,style: const TextStyle(color: textColor),),
-                              // species
-                              Text('Species: \n${friends[index].species}' , style: const TextStyle(color: textColor),),
-                              // breed
-                              Text('Species: \n${friends[index].species}' , style: const TextStyle(color: textColor),),
-                            ],
+                  return SizedBox(
+                    height: height,
+                    child: GridView.builder(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                      itemBuilder: (context , index) {
+                        return GestureDetector(
+                          onTap: () {
+                            // go to view friend
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> ViewFriend(friend: friends[index])));
+                          },
+                          child: Card(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(height/50)),
+                            shadowColor: shadowColor,
+                            color: cardBackgroundColor,
+                            elevation: 8,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  // Image
+                                  Expanded(child: Image.network(friends[index].images[0])),
+                                  // name
+                                  Row(
+                                    children: [
+                                      Text(friends[index].name ,style: const TextStyle(color: textColor),),
+                                    ],
+                                  ),
+                                  // species
+                                  Row(
+                                    children: [
+                                      Text('Species: ${friends[index].species}' , style: const TextStyle(color: textColor),),
+                                    ],
+                                  ),
+                                  // breed
+                                  Row(
+                                    children: [
+                                      Text('Breed: ${friends[index].breed}' , style: const TextStyle(color: textColor),),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                        ),
-                      );
-                    },
-                    itemCount: friends.length,
+                        );
+                      },
+                      itemCount: friends.length,
+                    ),
                   );
                 }//end if-else
               }else{
