@@ -6,6 +6,7 @@ import 'package:adopt_a_friend/logic/database_logic.dart';
 import 'package:adopt_a_friend/objects/friend.dart';
 import 'package:adopt_a_friend/objects/wish.dart';
 import 'package:flutter/material.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ViewFriend extends StatefulWidget {
   final Friend friend;
@@ -54,6 +55,7 @@ class _ViewFriendState extends State<ViewFriend> {
                     Expanded(child: Text(widget.friend.name, style: const TextStyle(color: textColor),)),
                     IconButton(onPressed: () {
                       // todo: share the pet
+                      Share.share('Check out ${widget.friend.name} on adopt a friend!. ');
                     }, icon: const Icon(Icons.share))
                   ],
                 ),
@@ -117,7 +119,7 @@ class _ViewFriendState extends State<ViewFriend> {
                             )
                         ), context);
                       },
-                      child: const Text('add to wish list')))
+                      child: const Text('Bookmark')))
                 ],
               ),
               //contact for adoption

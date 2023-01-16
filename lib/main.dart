@@ -69,16 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const WishList()
   ];
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.peopleRoof), label: 'Shelters'),
             BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.paw), label: 'Info cards'),
-            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.faceGrinHearts), label: 'favourites')
+            BottomNavigationBarItem(icon: FaIcon(FontAwesomeIcons.bookBookmark), label: 'Bookmarks')
           ],
         selectedItemColor: Colors.teal,
         currentIndex: _selectedIndex,
