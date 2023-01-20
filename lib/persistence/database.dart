@@ -51,7 +51,7 @@ class DatabaseManager {
           needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
-      ]) ,
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
       Friend(
           name: 'Scooty', breed: 'Husky X',
           species: 'Dog', age: 1, color: 'Brown',
@@ -59,7 +59,7 @@ class DatabaseManager {
           needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
-      ]) ,
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
       Friend(
           name: 'Scooty', breed: 'Husky X',
           species: 'Dog', age: 1, color: 'Brown',
@@ -67,7 +67,7 @@ class DatabaseManager {
           needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
-      ]) ,
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
       Friend(
           name: 'Scooty', breed: 'Husky X',
           species: 'Dog', age: 1, color: 'Brown',
@@ -75,7 +75,39 @@ class DatabaseManager {
           needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
         'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
-      ]) ,
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
+      Friend(
+          name: 'Scooty', breed: 'Husky X',
+          species: 'Dog', age: 1, color: 'Brown',
+          sex: 'female', description: 'House trained: no\nSize: Large\nVaccination: pending',
+          needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
+      Friend(
+          name: 'Scooty', breed: 'Husky X',
+          species: 'Dog', age: 1, color: 'Brown',
+          sex: 'female', description: 'House trained: no\nSize: Large\nVaccination: pending',
+          needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
+      Friend(
+          name: 'Scooty', breed: 'Husky X',
+          species: 'Dog', age: 1, color: 'Brown',
+          sex: 'female', description: 'House trained: no\nSize: Large\nVaccination: pending',
+          needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
+      Friend(
+          name: 'Scooty', breed: 'Husky X',
+          species: 'Dog', age: 1, color: 'Brown',
+          sex: 'female', description: 'House trained: no\nSize: Large\nVaccination: pending',
+          needs: 'Personality, good with everyone, \n\nNot suitable for apartments', images: [
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185',
+        'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/scooty.jpeg?alt=media&token=56d8811e-5257-48fa-b7ca-798e11659185'
+      ], email: 'mthandazo99@gmail.com', link: 'https://winnipeghumanesociety.ca/adoptable-animals/?sb_page=1&sb_animal_id=451317') ,
     });
   }
 
@@ -154,6 +186,7 @@ class DatabaseManager {
   }//end insert item
 
   static Future<List<Wish>> getItems() async {
+    await openDb();
     final List<Map<String, dynamic>> maps = await _database.query('wishes');
 
     return List.generate(maps.length, (index){
@@ -164,7 +197,7 @@ class DatabaseManager {
               species: maps[index]['species'], age: int.parse(maps[index]['age']) ,
               color: maps[index]['color'], sex: maps[index]['sex'],
               description: maps[index]['description'],
-              needs: maps[index]['needs'], images: maps[index]['images'])
+              needs: maps[index]['needs'], images: maps[index]['images'], email: maps[index]['email'] ?? '', link:maps[index]['link'] ?? 'https://www.sizibamthandazo.dev')
       );
     }).toList();
   }//end get items

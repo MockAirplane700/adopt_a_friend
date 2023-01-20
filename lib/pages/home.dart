@@ -24,11 +24,12 @@ class _HomeState extends State<Home> {
         backgroundColor: appBarColor,
       ),
       backgroundColor: backgroundColor,
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FutureBuilder(builder: (context , snapshot){
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 1000,
+            child: FutureBuilder(builder: (context , snapshot){
               if (snapshot.hasData) {
 
                 Set<Friend> set = snapshot.data;
@@ -92,26 +93,26 @@ class _HomeState extends State<Home> {
               }//end if-else
             },
               future: DatabaseLogic.fetchFriends(),),
-            // getting saved friends
-            SizedBox(
-              height: height/100,
-              child: FutureBuilder(builder: (context , snapshot) {
-                if (snapshot.hasData) {
-                  List<Wish> wishes = snapshot.data;
-                  if (wishes.isEmpty) {
-                    return Container();
-                  }else{
-                    DatabaseLogic.setWishes(wishes);
-                    return Container();
-                  }//end if-else
-                }else{
-                  return const Center(child: CircularProgressIndicator(),);
-                }//end if-else
-              },
-                future: DatabaseLogic.getWishes(),),
-            ),
-          ],
-        )
+          ),
+          // getting saved friends
+         Expanded(flex: 1, child:  SizedBox(
+           height: height/1000000,
+           child: FutureBuilder(builder: (context , snapshot) {
+             if (snapshot.hasData) {
+               List<Wish> wishes = snapshot.data;
+               if (wishes.isEmpty) {
+                 return Container();
+               }else{
+                 DatabaseLogic.setWishes(wishes);
+                 return Container();
+               }//end if-else
+             }else{
+               return const Center(child: CircularProgressIndicator(),);
+             }//end if-else
+           },
+             future: DatabaseLogic.getWishes(),),
+         ),)
+        ],
       ),
     );
   }

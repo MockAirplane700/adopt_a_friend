@@ -6,6 +6,7 @@ const Color backgroundColor = Colors.white;
 const Color appBarColor = Colors.white;
 const Color cardBackgroundColor = Colors.white;
 const Color shadowColor = Colors.black;
+const Color buttonColor = Colors.white;
 // share link to couponsareus
 const String shareUrl = 'https://www.sizibamthandazo.dev/projects/couponsareus';
 const String logoUrl = 'https://firebasestorage.googleapis.com/v0/b/coupons-are-us.appspot.com/o/couponsareus%20logo%202.png?alt=media&token=3a04512f-5f8d-4786-a1c7-c156a0dd2448';

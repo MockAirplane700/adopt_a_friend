@@ -17,15 +17,7 @@ class ViewFriend extends StatefulWidget {
   State<ViewFriend> createState() => _ViewFriendState();
 }
 
-// final String name;
-// final String breed;
-// final String species;
-// final int age;
-// final String color;
-// final String sex;
-// final String description;
-// final String needs;
-// final List<dynamic> images;
+
 
 class _ViewFriendState extends State<ViewFriend> {
   @override
@@ -55,11 +47,12 @@ class _ViewFriendState extends State<ViewFriend> {
                     Expanded(child: Text(widget.friend.name, style: const TextStyle(color: textColor),)),
                     IconButton(onPressed: () {
                       // todo: share the pet
-                      Share.share('Check out ${widget.friend.name} on adopt a friend!. ');
+                      Share.share(widget.friend.link);
                     }, icon: const Icon(Icons.share))
                   ],
                 ),
               ),
+              const Divider(),
               // Age
               Row(
                 children: [
@@ -102,6 +95,7 @@ class _ViewFriendState extends State<ViewFriend> {
                   Text( widget.friend.description, style: const TextStyle(color: textColor),),
                 ],
               ),
+              const Divider(),
               // add to wish list
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -115,11 +109,17 @@ class _ViewFriendState extends State<ViewFriend> {
                                 species: widget.friend.species, age: widget.friend.age,
                                 color: widget.friend.color, sex: widget.friend.sex,
                                 description: widget.friend.description,
-                                needs: widget.friend.needs, images: widget.friend.images
+                                needs: widget.friend.needs, images: widget.friend.images, email: widget.friend.email,
+                                link: widget.friend.link
                             )
                         ), context);
                       },
-                      child: const Text('Bookmark')))
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: buttonColor,
+                        elevation: 8,
+                        shadowColor: shadowColor
+                      ),
+                      child: const Text('Bookmark', style: TextStyle(color: textColor),)))
                 ],
               ),
               //contact for adoption
@@ -129,9 +129,14 @@ class _ViewFriendState extends State<ViewFriend> {
                 children: [
                   Expanded(child: ElevatedButton(
                       onPressed: () {
-                        // launchEmailIntent(widget.friend.email, 'ADOPT A FRIEND INTEREST IN ${widget.friend.name}');
+                        launchEmailIntent(widget.friend.email, 'ADOPT A FRIEND INTEREST IN ${widget.friend.name}');
                       },
-                      child: const Text('Contact for adoption')))
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: buttonColor,
+                        elevation: 8,
+                        shadowColor: shadowColor
+                      ),
+                      child: const Text('Contact for adoption', style: TextStyle(color: textColor),)))
                 ],
               )
 
